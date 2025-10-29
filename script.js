@@ -156,11 +156,13 @@ document.querySelectorAll('.counter-item, .gallery-item, .message-content p').fo
     observer.observe(el);
 });
 
-// Efeito parallax suave no hero
+// Efeito parallax suave no hero (desabilitado em mobile)
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero-content');
-    if (hero) {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (hero && !isMobile) {
         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         hero.style.opacity = 1 - scrolled / 700;
     }
@@ -236,8 +238,15 @@ function createConfetti() {
 // Funções para Modal do Envelope
 function openEnvelope() {
     const envelopeModal = document.getElementById('envelopeModal');
+    const modalContent = envelopeModal.querySelector('.surprise-modal-content');
+    
     envelopeModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    // Resetar scroll para o topo
+    if (modalContent) {
+        modalContent.scrollTop = 0;
+    }
     
     // Resetar animações
     const envelope = envelopeModal.querySelector('.envelope');
@@ -265,8 +274,15 @@ function closeEnvelope() {
 // Funções para Modal do Presente
 function openGift() {
     const giftModal = document.getElementById('giftModal');
+    const modalContent = giftModal.querySelector('.surprise-modal-content');
+    
     giftModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    
+    // Resetar scroll para o topo
+    if (modalContent) {
+        modalContent.scrollTop = 0;
+    }
     
     // Resetar animações
     const giftBase = giftModal.querySelector('.gift-base');
