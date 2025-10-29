@@ -3,411 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emily & Bernardo - Nossa História de Amor</title>
+    <title>Para Emily ❤️</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Partículas de Fundo -->
-    <div class="particles" id="particles"></div>
-    
-    <!-- Header com Animação -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
+    <!-- Partículas de coração flutuantes -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Seção de Boas-vindas -->
+    <section class="hero">
         <div class="hero-content">
-            <div class="lily-decoration lily-left"></div>
-            <div class="lily-decoration lily-right"></div>
-            <h1 class="title-cursive fade-in">Emily & Bernardo</h1>
-            <p class="subtitle fade-in-delay">Nossa História de Amor</p>
-            <div class="date-badge fade-in-delay-2">
-                <span class="heart-icon">💕</span>
-                <span>Desde 28 de Setembro de 2022</span>
-                <span class="heart-icon">💕</span>
+            <h1 class="fade-in">Emily Domingos Francisco</h1>
+            <p class="subtitle fade-in-delay">Meu amor, minha vida, minha felicidade</p>
+            <div class="heart-icon">❤️</div>
+            <button class="scroll-btn" onclick="scrollToSection('counter')">
+                <span>Descobrir a Surpresa</span>
+                <span class="arrow">↓</span>
+            </button>
+            
+            <!-- Botões de Surpresa -->
+            <div class="surprise-buttons">
+                <button class="surprise-btn envelope-btn" onclick="openEnvelope()">
+                    <span class="btn-icon">✉️</span>
+                    <span class="btn-text">Carta de Amor</span>
+                </button>
+                <button class="surprise-btn gift-btn" onclick="openGift()">
+                    <span class="btn-icon">🎁</span>
+                    <span class="btn-text">Presente Especial</span>
+                </button>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>↓</span>
-        </div>
-    </header>
+    </section>
+
+    <!-- Player Spotify Fixo -->
+    <div class="spotify-player">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/29F6nTw8iq9xg4P5w0G5Al?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
 
     <!-- Contador de Tempo -->
-    <section class="time-counter">
-        <div class="container">
-            <h2 class="section-title">Nosso Tempo Juntos</h2>
-            <div class="counter-grid">
-                <div class="counter-item">
-                    <div class="counter-number" id="years">0</div>
-                    <div class="counter-label">Anos</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="months">0</div>
-                    <div class="counter-label">Meses</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="days">0</div>
-                    <div class="counter-label">Dias</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="hours">0</div>
-                    <div class="counter-label">Horas</div>
-                </div>
+    <section id="counter" class="counter-section">
+        <h2>Nosso Tempo Juntos</h2>
+        <p class="date-label">Desde 28 de Setembro de 2022</p>
+        <div class="counter-grid">
+            <div class="counter-item">
+                <span class="counter-value" id="years">0</span>
+                <span class="counter-label">Anos</span>
             </div>
-            <div class="total-days">
-                <p>Isso representa <strong id="totalDays">0</strong> dias incríveis ao seu lado!</p>
+            <div class="counter-item">
+                <span class="counter-value" id="months">0</span>
+                <span class="counter-label">Meses</span>
+            </div>
+            <div class="counter-item">
+                <span class="counter-value" id="days">0</span>
+                <span class="counter-label">Dias</span>
+            </div>
+            <div class="counter-item">
+                <span class="counter-value" id="hours">0</span>
+                <span class="counter-label">Horas</span>
             </div>
         </div>
     </section>
 
-    <!-- Timeline da Relação -->
-    <section class="timeline">
-        <div class="container">
-            <h2 class="section-title">Nossa Linha do Tempo</h2>
-            <div class="timeline-container">
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content">
-                        <div class="timeline-icon">🌟</div>
-                        <h3>O Começo</h3>
-                        <p class="timeline-date">28 de Setembro de 2022</p>
-                        <p>O dia em que nossa história começou. O dia em que você disse sim e mudou minha vida para sempre.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content">
-                        <div class="timeline-icon">💝</div>
-                        <h3>Cada Momento</h3>
-                        <p>Desde então, cada dia ao seu lado é um presente. Cada riso, cada olhar, cada abraço se tornou uma memória preciosa.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item timeline-left">
-                    <div class="timeline-content">
-                        <div class="timeline-icon">🌸</div>
-                        <h3>Crescendo Juntos</h3>
-                        <p>Juntos, crescemos, aprendemos e construímos algo lindo. Você me faz querer ser uma pessoa melhor a cada dia.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item timeline-right">
-                    <div class="timeline-content">
-                        <div class="timeline-icon">💫</div>
-                        <h3>Hoje e Sempre</h3>
-                        <p class="timeline-date">E continua...</p>
-                        <p>Este é apenas o começo. Mal posso esperar por todos os momentos que ainda vamos viver juntos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Mensagem Especial -->
+    <!-- Mensagem Romântica -->
     <section class="message-section">
-        <div class="container">
-            <div class="message-card">
-                <div class="lily-border"></div>
-                <h2 class="message-title">Para Você, Emily</h2>
-                <div class="message-content">
-                    <p>Meu amor,</p>
-                    <p>Cada dia ao seu lado é uma nova aventura, um novo motivo para sorrir. Você trouxe luz para minha vida de uma forma que eu nunca imaginei ser possível.</p>
-                    <p>Seus olhos brilham como estrelas, seu sorriso ilumina meus dias mais escuros, e seu amor me faz sentir completo.</p>
-                    <p>Como os lírios que você tanto ama, nosso amor floresce com pureza, beleza e elegância. E assim como essas flores, quero cuidar de você com todo carinho e dedicação.</p>
-                    <p>Obrigado por ser minha companheira, minha melhor amiga, meu amor. Obrigado por cada momento, cada riso, cada abraço.</p>
-                    <p class="message-signature">Te amo infinitamente,<br><strong>Bernardo</strong> 💕</p>
-                </div>
-                <div class="lily-border"></div>
+        <div class="message-container">
+            <h2>Para Você, Meu Amor</h2>
+            <div class="message-content">
+                <p>Emily,</p>
+                <p>Desde aquele dia especial, 28 de setembro de 2022, quando você disse sim, minha vida ganhou um novo significado. Cada dia ao seu lado é uma dádiva, cada sorriso seu ilumina meu mundo.</p>
+                <p>Você é minha razão de acordar feliz, meu pensamento constante, meu porto seguro. Com você, aprendi o verdadeiro significado do amor, da cumplicidade e da felicidade.</p>
+                <p>Estas fotos são apenas um pequeno registro dos momentos incríveis que vivemos juntos, mas nossos melhores momentos ainda estão por vir.</p>
+                <p class="signature">Te amo infinitamente! ❤️</p>
             </div>
         </div>
     </section>
 
-    <!-- Galeria de Lírios -->
-    <section class="gallery">
-        <div class="container">
-            <h2 class="section-title">Como Lírios, Nosso Amor Floresce</h2>
-            <div class="lily-gallery">
-                <div class="lily-item">🌺</div>
-                <div class="lily-item">💐</div>
-                <div class="lily-item">🌸</div>
-                <div class="lily-item">🌼</div>
-                <div class="lily-item">🌷</div>
-                <div class="lily-item">🏵️</div>
-            </div>
-            <p class="gallery-text">Assim como você ama os lírios, eu amo você - com toda a pureza, beleza e delicadeza que essas flores representam.</p>
-        </div>
-    </section>
-
-    <!-- Galeria de Fotos do Casal -->
-    <section class="photo-gallery-section">
-        <div class="container">
-            <h2 class="section-title">Nossos Momentos Especiais</h2>
-            <p class="gallery-subtitle">Cada foto conta uma história do nosso amor 📸</p>
-            
-            <div class="photo-gallery">
-                <div class="photo-item" data-index="0">
-                    <img src="fotos/foto1.jpeg" alt="Nosso primeiro momento juntos" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px 20px 0 0;">
-                    <div class="photo-caption">Nosso primeiro momento juntos</div>
-                </div>
-                <div class="photo-item" data-index="1">
-                    <img src="fotos/foto2.jpeg" alt="Um dia inesquecível" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px 20px 0 0;">
-                    <div class="photo-caption">Um dia inesquecível</div>
-                </div>
-                <div class="photo-item" data-index="2">
-                    <img src="fotos/foto3.jpeg" alt="Felicidade em cada olhar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px 20px 0 0;">
-                    <div class="photo-caption">Felicidade em cada olhar</div>
-                </div>
-                <div class="photo-item" data-index="3">
-                    <img src="fotos/foto4.jpeg" alt="Criando memórias" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px 20px 0 0;">
-                    <div class="photo-caption">Criando memórias</div>
-                </div>
-                <div class="photo-item" data-index="4">
-                    <img src="fotos/foto5.jpeg" alt="Amor verdadeiro" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px 20px 0 0;">
-                    <div class="photo-caption">Amor verdadeiro</div>
-                </div>
-                <div class="photo-item" data-index="5">
-                    <img src="fotos/foto6.jpeg" alt="Para sempre juntos" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px 20px 0 0;">
-                    <div class="photo-caption">Para sempre juntos</div>
+    <!-- Galeria de Fotos -->
+    <section class="gallery-section">
+        <h2>Nossos Momentos Especiais</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-index="0">
+                <img src="fotos/foto1.jpeg" alt="Nosso momento especial 1">
+                <div class="overlay">
+                    <span class="zoom-icon">🔍</span>
                 </div>
             </div>
-
-            <!-- Lightbox para ampliar fotos -->
-            <div class="lightbox" id="lightbox">
-                <span class="lightbox-close">&times;</span>
-                <span class="lightbox-prev">&#10094;</span>
-                <span class="lightbox-next">&#10095;</span>
-                <img class="lightbox-image" id="lightbox-img" src="" alt="Foto ampliada">
-                <div class="lightbox-caption" id="lightbox-caption"></div>
+            <div class="gallery-item" data-index="1">
+                <img src="fotos/foto2.jpeg" alt="Nosso momento especial 2">
+                <div class="overlay">
+                    <span class="zoom-icon">🔍</span>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Mensagens Surpresa -->
-    <section class="surprise-messages">
-        <div class="container">
-            <h2 class="section-title">Mensagens Especiais Para Você</h2>
-            <p class="gallery-subtitle">Clique nos cards para revelar mensagens secretas 💌</p>
-            
-            <div class="flip-cards-grid">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="flip-icon">💝</div>
-                            <h3>Mensagem 1</h3>
-                            <p>Clique para revelar</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Você sabia?</h3>
-                            <p>Desde o primeiro dia, eu soube que você era especial. Seu olhar me conquistou instantaneamente.</p>
-                        </div>
-                    </div>
+            <div class="gallery-item" data-index="2">
+                <img src="fotos/foto3.jpeg" alt="Nosso momento especial 3">
+                <div class="overlay">
+                    <span class="zoom-icon">🔍</span>
                 </div>
-
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="flip-icon">🌟</div>
-                            <h3>Mensagem 2</h3>
-                            <p>Clique para revelar</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Meu Desejo</h3>
-                            <p>Acordar todos os dias ao seu lado é o meu maior sonho realizado. Você é minha paz.</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="gallery-item" data-index="3">
+                <img src="fotos/foto4.jpeg" alt="Nosso momento especial 4">
+                <div class="overlay">
+                    <span class="zoom-icon">🔍</span>
                 </div>
-
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="flip-icon">💫</div>
-                            <h3>Mensagem 3</h3>
-                            <p>Clique para revelar</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Gratidão</h3>
-                            <p>Obrigado por me fazer rir nos momentos difíceis e por celebrar comigo cada vitória.</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="gallery-item" data-index="4">
+                <img src="fotos/foto5.jpeg" alt="Nosso momento especial 5">
+                <div class="overlay">
+                    <span class="zoom-icon">🔍</span>
                 </div>
-
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <div class="flip-icon">🎁</div>
-                            <h3>Mensagem 4</h3>
-                            <p>Clique para revelar</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Promessa</h3>
-                            <p>Prometo cuidar de você, te fazer sorrir e te amar cada dia mais do que ontem.</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="gallery-item" data-index="5">
+                <img src="fotos/foto6.jpeg" alt="Nosso momento especial 6">
+                <div class="overlay">
+                    <span class="zoom-icon">🔍</span>
+                </div>
+            </div>
+            <div class="gallery-item" data-index="6">
+                <img src="fotos/foto7.jpeg" alt="Nosso momento especial 7">
+                <div class="overlay">
+                    <span class="zoom-icon">🔍</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contador Regressivo -->
-    <section class="countdown-section">
-        <div class="container">
-            <h2 class="section-title">Contagem Para Nosso Próximo Aniversário</h2>
-            <div class="countdown-container">
-                <div class="countdown-icon">🎉</div>
-                <div class="countdown-grid">
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="countdown-months">0</div>
-                        <div class="countdown-label">Meses</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="countdown-days">0</div>
-                        <div class="countdown-label">Dias</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="countdown-hours">0</div>
-                        <div class="countdown-label">Horas</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="countdown-minutes">0</div>
-                        <div class="countdown-label">Minutos</div>
+    <!-- Modal de Imagem -->
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <button class="modal-nav prev" onclick="changeImage(-1)">❮</button>
+        <img class="modal-content" id="modalImage">
+        <button class="modal-nav next" onclick="changeImage(1)">❯</button>
+        <div class="modal-counter" id="modalCounter"></div>
+    </div>
+
+    <!-- Modal Envelope -->
+    <div class="modal surprise-modal" id="envelopeModal">
+        <div class="surprise-modal-content envelope-content">
+            <span class="close-surprise" onclick="closeEnvelope()">&times;</span>
+            <div class="envelope-animation">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-body"></div>
+                </div>
+                <div class="letter">
+                    <h2>💌 Minha Carta de Amor 💌</h2>
+                    <div class="letter-content">
+                        <p>Minha querida Emily,</p>
+                        <p>As palavras parecem poucas para expressar o quanto você significa para mim. Você é a razão do meu sorriso, a luz dos meus dias, minha inspiração diária.</p>
+                        <p>Cada momento ao seu lado é um presente precioso que guardo no coração. Sua risada é a minha música favorita, seu abraço é o meu lar.</p>
+                        <p>Obrigado por existir, por me amar, por ser essa pessoa incrível que transforma dias comuns em momentos mágicos.</p>
+                        <p>Te amarei hoje, amanhã e sempre!</p>
+                        <p class="letter-signature">Com todo meu amor, sempre seu ❤️</p>
                     </div>
                 </div>
-                <p class="countdown-message" id="countdown-message">Mal posso esperar para celebrar mais um ano ao seu lado! 💕</p>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal Presente -->
+    <div class="modal surprise-modal" id="giftModal">
+        <div class="surprise-modal-content gift-content">
+            <span class="close-surprise" onclick="closeGift()">&times;</span>
+            <div class="gift-animation">
+                <div class="gift-box">
+                    <div class="gift-lid">
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-base"></div>
+                </div>
+                <div class="gift-reveal">
+                    <h2>🎁 Suas Qualidades Especiais 🎁</h2>
+                    <div class="qualities-grid">
+                        <div class="quality-card">💖 Carinhosa</div>
+                        <div class="quality-card">✨ Radiante</div>
+                        <div class="quality-card">😊 Sorriso Lindo</div>
+                        <div class="quality-card">🌟 Especial</div>
+                        <div class="quality-card">💕 Amorosa</div>
+                        <div class="quality-card">🌺 Única</div>
+                        <div class="quality-card">💫 Brilhante</div>
+                        <div class="quality-card">🦋 Gentil</div>
+                        <div class="quality-card">🌹 Perfeita</div>
+                    </div>
+                    <p class="gift-message">Você é tudo isso e muito mais! ❤️</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Final -->
+    <section class="final-section">
+        <div class="final-content">
+            <h2>Feliz Aniversário de Namoro!</h2>
+            <p>Que venham muitos e muitos anos ao seu lado</p>
+            <div class="heart-big">💕</div>
         </div>
     </section>
-
-    <!-- Nossos Sonhos -->
-    <section class="dreams-section">
-        <div class="container">
-            <h2 class="section-title">Nossos Sonhos e Planos</h2>
-            <p class="gallery-subtitle">O futuro que vamos construir juntos ✨</p>
-            
-            <div class="dreams-grid">
-                <div class="dream-card">
-                    <div class="dream-icon">🏠</div>
-                    <h3>Nosso Lar</h3>
-                    <p>Construir nossa casa dos sonhos, cheia de amor e memórias</p>
-                </div>
-                <div class="dream-card">
-                    <div class="dream-icon">✈️</div>
-                    <h3>Viajar o Mundo</h3>
-                    <p>Conhecer novos lugares e criar histórias inesquecíveis juntos</p>
-                </div>
-                <div class="dream-card">
-                    <div class="dream-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Família</h3>
-                    <p>Formar nossa própria família e educar com amor</p>
-                </div>
-                <div class="dream-card">
-                    <div class="dream-icon">🎯</div>
-                    <h3>Crescer Juntos</h3>
-                    <p>Apoiar um ao outro em cada sonho e conquista</p>
-                </div>
-                <div class="dream-card">
-                    <div class="dream-icon">💍</div>
-                    <h3>Eternizar Nosso Amor</h3>
-                    <p>Celebrar nossa união e viver para sempre juntos</p>
-                </div>
-                <div class="dream-card">
-                    <div class="dream-icon">🌟</div>
-                    <h3>Ser Felizes</h3>
-                    <p>Viver cada dia com alegria, amor e cumplicidade</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Playlist Musical -->
-    <section class="music-section">
-        <div class="container">
-            <h2 class="section-title">Nossas Músicas</h2>
-            <p class="gallery-subtitle">A trilha sonora do nosso amor 🎵</p>
-            
-            <div class="spotify-container">
-                <div class="spotify-placeholder">
-                    <div class="spotify-icon">🎧</div>
-                    <h3>Adicione sua Playlist Spotify</h3>
-                    <p>Para adicionar uma playlist:</p>
-                    <ol>
-                        <li>Crie uma playlist no Spotify</li>
-                        <li>Clique nos três pontos da playlist</li>
-                        <li>Selecione "Compartilhar" → "Incorporar playlist"</li>
-                        <li>Copie o código e substitua no HTML</li>
-                    </ol>
-                    <p class="spotify-tip">💡 Ou deixe este espaço com músicas românticas que representam vocês!</p>
-                </div>
-                <!-- Descomente e adicione seu iframe do Spotify aqui:
-                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/SEU_ID_AQUI" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Razões para Amar -->
-    <section class="reasons">
-        <div class="container">
-            <h2 class="section-title">Razões Infinitas Para Te Amar</h2>
-            <div class="reasons-grid">
-                <div class="reason-card">
-                    <div class="reason-icon">😊</div>
-                    <h3>Seu Sorriso</h3>
-                    <p>Que ilumina meu dia e aquece meu coração</p>
-                </div>
-                <div class="reason-card">
-                    <div class="reason-icon">💖</div>
-                    <h3>Seu Coração</h3>
-                    <p>Tão bondoso, generoso e cheio de amor</p>
-                </div>
-                <div class="reason-card">
-                    <div class="reason-icon">✨</div>
-                    <h3>Seu Jeito</h3>
-                    <p>Único e especial que me conquista a cada dia</p>
-                </div>
-                <div class="reason-card">
-                    <div class="reason-icon">🌟</div>
-                    <h3>Sua Força</h3>
-                    <p>Que me inspira a ser melhor sempre</p>
-                </div>
-                <div class="reason-card">
-                    <div class="reason-icon">🎭</div>
-                    <h3>Seu Humor</h3>
-                    <p>Que torna tudo mais leve e divertido</p>
-                </div>
-                <div class="reason-card">
-                    <div class="reason-icon">💝</div>
-                    <h3>Seu Amor</h3>
-                    <p>Que me completa de todas as formas</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-title">Emily & Bernardo</p>
-                <p class="footer-subtitle">Para sempre e sempre 💕</p>
-                <div class="footer-hearts">
-                    <span>💕</span>
-                    <span>💖</span>
-                    <span>💗</span>
-                    <span>💓</span>
-                    <span>💕</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Botão de Música -->
-    <button class="music-toggle" id="musicToggle" title="Música">
-        <span id="musicIcon">🎵</span>
-    </button>
-
-    <!-- Botão de WhatsApp Flutuante -->
-    <a href="https://wa.me/51997002031?text=Amei%20o%20site!%20%F0%9F%92%95" class="whatsapp-button" target="_blank" title="Envie uma mensagem">
-        <span class="whatsapp-icon">💬</span>
-    </a>
 
     <script src="script.js"></script>
 </body>
